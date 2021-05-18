@@ -1,0 +1,144 @@
+<Button>
+    #font_size: '40sp'
+    background_color: (0,0,1,1)
+    background_normal: ''
+
+<TextInput>
+    background_color: (150/255,150/255,150/255,1)
+
+<Label>
+    font_size: '25sp'
+    #halign: 'left'
+    #valign: 'middle'
+    #text_size: self.size
+    #background_color: (157/255, 157/255, 157/255,1)
+
+<MyGridLayout>
+
+    name:name
+    #exceldata:exceldata
+    apparat:apparat
+    namesatz:namesatz
+    ns_pw:ns_pw
+    app_pw:app_pw
+    voic_pw:voic_pw
+    admin_pw:admin_pw
+
+
+    #GridLayout:
+    BoxLayout:
+        orientation: 'vertical'
+
+        #cols:1
+        size: root.width - 5, root.height - 5
+        padding: 20
+        spacing: 20
+
+        #Label:
+        #    text: 'Nebenstellennummer'
+        #    background_color: (0,0,1,1)
+        #    canvas.before:
+                #Color:
+                #    rgba: self.background_color
+                #Rectangle:
+                #    size: self.size
+                #    pos:self.pos
+
+
+
+        GridLayout:
+            cols:2
+
+            Image:
+                source: 'images/avaya9611.jpg'
+
+            TextInput:
+                id: name
+                multiline:False
+                #size_hint: 1, 0.4
+                #font_size: 20
+                font_size: self.height - 15
+                #halign: 'left'
+                #valign: 'middle'
+                input_type: 'number'
+                input_filter: 'int'
+
+            Label:
+                text: 'Apparatetyp'
+
+            TextInput:
+                id: apparat
+                #size_hint: 0.5, 0.8
+                #multiline:True
+                multiline:False
+                #size_hint_y: None
+                #height: 200
+
+            Label:
+                text: 'Anwender'
+
+            TextInput:
+                id: namesatz
+                #size_hint: 0.5, 0.8
+                #multiline:True
+                multiline:False
+                #size_hint_y: None
+                #height: 200
+
+            Label:
+                text: 'N.Stellen PW'
+
+            TextInput:
+                id: ns_pw
+                #size_hint: 0.5, 0.8
+                #multiline:True
+                multiline:False
+                #size_hint_y: None
+                #height: 200
+
+            Label:
+                text: 'App PW'
+
+            TextInput:
+                id: app_pw
+                multiline:False
+
+            Label:
+                text: 'Voice PW'
+
+            TextInput:
+                id: voic_pw
+                #size_hint: 0.5, 0.8
+                #multiline:True
+                multiline:False
+                #size_hint_y: None
+                #height: 200
+
+            Label:
+                text: 'Admin PW'
+
+            TextInput:
+                id: admin_pw
+                #size_hint: 0.5, 0.8
+                #multiline:True
+                multiline:False
+                #size_hint_y: None
+                #height: 200
+
+
+
+            #BoxLayout:
+            #    #size_hint_y:None
+            #    size_hint:None, None
+            #    height: '65dp'
+
+        FloatLayout:
+            Button:
+                #size: 0.2, 0.4
+                size_hint: 0.5, 0.3
+                pos_hint: {'center_x': 0.5, 'y': 0.1}
+                text: "Go!"
+                font_size: self.height - 15
+                #font_size: 40
+                #on_press: root.press()
+                on_release: root.press()
