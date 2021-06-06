@@ -1,17 +1,19 @@
-#from kivy.app import App
+#from kivy.lang import Builder
 from kivymd.app import MDApp
-from kivy.uix.label import Label
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
+from kivymd.uix.label import MDLabel
+#from kivy.uix.gridlayout import GridLayout
+#from kivymd.uix.textfield import MDTextField
+from kivymd.uix.boxlayout import MDBoxLayout
+#from kivymd.uix.taptargetview import MDTapTargetView
+from kivymd.uix.button import MDFillRoundFlatButton
 from kivy.uix.image import Image
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
-from kivy.config import Config
+#from kivy.config import Config
 
 import openpyxl
 
-Config.set('kivy', 'keyboard_mode', 'systemanddock')
+#Config.set('kivy', 'keyboard_mode', 'systemanddock')
 
 class MyGridLayout(Widget):
     name = ObjectProperty(None)
@@ -78,6 +80,8 @@ class MyGridLayout(Widget):
 
 class KlickTelDECTApp(MDApp):
     def build(self):
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "BlueGray"
         return MyGridLayout()
 
 if __name__ == '__main__':
